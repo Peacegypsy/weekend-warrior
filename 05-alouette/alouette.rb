@@ -6,11 +6,11 @@ class Alouette
 
     i = verse_num - 1
     j = i
-     puts "Je te plumerai #{@bird_parts[i]}\n"*2
     verse_num.times do
      puts "Et #{@bird_parts[j]}!\n"*2
       j -= 1
     end
+    puts "Alouette, gentille alouette,\nAlouette, je te plumerai.\n"
   end
 
   def self.verse(verse_num)
