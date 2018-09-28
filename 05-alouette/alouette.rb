@@ -5,30 +5,31 @@ class Alouette
   def self.lines_for_verse(verse_num)
 
     i = verse_num - 1
-    j = 1
+    j = i
+     puts "Je te plumerai #{@bird_parts[i]}\n"*2
     verse_num.times do
-     ("Et " + "#{@bird_parts[j]}" + "!\n")*2
-      j += 1
+     puts "Et #{@bird_parts[j]}!\n"*2
+      j -= 1
     end
   end
 
   def self.verse(verse_num)
     i = verse_num - 1
     verse_num.times do
-      puts "Je te plumerai #{@bird_parts[i].split(' ')[1..-1].join(' ')}"*2
-      puts "#{@bird_parts[i]}"*2
+      puts "Je te plumerai #{@bird_parts[i]}\n"*2
+      puts lines_for_verse
       i += 1
     end
   end
 
   def self.sing
-    opening = "Alouette, gentille alouette,\nAlouette, je te plumerai.\n"
+    @opening = "Alouette, gentille alouette,\nAlouette, je te plumerai.\n"
 
-    end_part = ("Alouette, gentille alouette, Alouette, je te plumerai.\nAlouette!\nAlouette!\nA-a-a-ah\n" )
+    @end_part = ("Alouette, gentille alouette, Alouette, je te plumerai.\nAlouette!\nAlouette!\nA-a-a-ah\n" )
 
-    puts opening
+    puts @opening
     puts verse(num)
-    puts end_part
+    puts @end_part
 
 
   end
