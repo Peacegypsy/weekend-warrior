@@ -15,11 +15,12 @@ class Alouette
 
   def self.verse(verse_num)
     i = verse_num - 1
-    verse_num.times do
+    k = verse_num
       puts "Je te plumerai #{@bird_parts[i]}\n"*2
-      puts lines_for_verse
-      i += 1
-    end
+
+      puts lines_for_verse(k)
+
+
   end
 
   def self.sing
